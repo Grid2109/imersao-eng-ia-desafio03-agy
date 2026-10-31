@@ -22,7 +22,7 @@ O projeto exemplifica como ferramentas de IA generativa para desenvolvimento de 
 - **Ciclo de vida em 3 estados**: Gerencia o progresso das tarefas entre Pendente, Em andamento e Concluída.
 - **Tema Escuro inspirado no shadcn/ui**: Estilização construída com variáveis CSS semânticas no `:root` (`--background`, `--foreground`, `--card`, `--card-foreground`, `--primary`, `--primary-foreground`, `--secondary`, `--muted`, `--muted-foreground`, `--accent`, `--destructive`, `--border`, `--input`, `--ring` e `--radius`).
 - **Centralização e Responsividade**: Cartão principal centralizado na vertical e na horizontal, adaptando-se perfeitamente a computadores e celulares.
-- **Contadores em tempo real**: Acompanhamento instantâneo de tarefas (`Total`, `Em andamento` e `Concluídas`).
+- **Contadores em tempo real**: Acompanhamento instantâneo de tarefas (`Total`, `Pendentes`, `Em andamento` e `Concluídas`).
 - **Filtros e Limpeza rápida**: Filtragem por status e remoção de tarefas finalizadas em um clique.
 - **Edição inline**: Permite alterar o texto de qualquer tarefa diretamente na lista.
 
@@ -310,7 +310,7 @@ Para garantir conformidade entre a documentação e o código real, cada afirma�
 | Filtros por status (Todas, Pendentes, Em andamento, Concluídas) | `index.html` (linhas 47-53) e `script.js` (linhas 164-169) |
 | Botão "Limpar concluídas" para exclusão em lote | `index.html` (linha 54) e `script.js` (linhas 118-123) removem itens com `status === "concluida"` |
 | Botão de exclusão com ícone de lixeira em SVG e hover suave | `script.js` (linhas 265-283) e `style.css` (linhas 265-289) |
-| Contadores em tempo real de Total, Em andamento e Concluídas | `script.js` (linhas 154-162) calcula e atualiza elementos sem verificações redundantes |
+| Contadores em tempo real de Total, Pendentes, Em andamento e Concluídas | `index.html` (linhas 41-44) e `script.js` (linhas 197-212) |
 | Respeito à preferência prefers-reduced-motion no spinner | `style.css` (linhas 372-382) na media query `@media (prefers-reduced-motion: reduce)` |
 | Salvamento protegido com try/catch contra QuotaExceededError | `script.js` (linhas 41-48) na função `salvarTarefasNoStorage` |
 | Identificadores gerados com crypto.randomUUID() | `script.js` (linhas 68-71) em `adicionarTarefa` |
