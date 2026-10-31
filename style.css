@@ -1,0 +1,311 @@
+/* ==========================================================================
+   1. VARIÁVEIS DO TEMA (Inspirado no Dark Mode do shadcn/ui)
+   ========================================================================== */
+:root {
+  --background: #09090b;                 /* Fundo quase preto */
+  --foreground: #fafafa;                 /* Texto principal quase branco */
+  --card: #18181b;                       /* Cartão em cinza escuro um pouco mais claro */
+  --card-foreground: #fafafa;            /* Texto dentro do cartão */
+  --primary: #fafafa;                    /* Destaque principal (botão Adicionar) */
+  --primary-foreground: #09090b;         /* Texto do botão principal */
+  --secondary: #27272a;                  /* Fundo de elementos secundários */
+  --muted: #27272a;                      /* Fundo discreto */
+  --muted-foreground: #a1a1aa;           /* Texto secundário em cinza médio */
+  --accent: #27272a;                     /* Realce ao passar o mouse (hover) */
+  --destructive: #ef4444;                /* Cor de remoção e alerta */
+  --border: rgba(255, 255, 255, 0.1);    /* Bordas finas: branco com 10% de opacidade */
+  --input: rgba(255, 255, 255, 0.1);     /* Borda do campo de texto: branco a 10% */
+  --ring: #d4d4d8;                       /* Cor do anel de foco visível */
+  --radius: 0.5rem;                      /* Arredondamento padrão dos cantos (8px) */
+}
+
+/* Remove margens padrão do navegador e facilita o cálculo de tamanhos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo geral do fundo da página e centralização vertical e horizontal */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  line-height: 1.5;
+}
+
+/* Cartão central que envolve a aplicação */
+.container {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Cabeçalho com título e subtítulo */
+.cabecalho {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cabecalho h1 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--card-foreground);
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+  font-size: 0.92rem;
+  color: var(--muted-foreground);
+}
+
+/* Área do formulário (campo de texto + botão lado a lado) */
+.form-tarefa {
+  display: flex;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Campo onde o usuário digita a tarefa */
+.input-tarefa {
+  flex: 1;
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--input);
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-tarefa::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* Foco visível usando a variável --ring */
+.input-tarefa:focus-visible,
+.botao-adicionar:focus-visible,
+.botao-remover:focus-visible,
+.checkbox-tarefa:focus-visible {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 2px var(--card), 0 0 0 4px var(--ring);
+}
+
+/* Botão de adicionar tarefa */
+.botao-adicionar {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.botao-adicionar:hover {
+  opacity: 0.9;
+}
+
+.botao-adicionar:active {
+  transform: scale(0.98);
+}
+
+/* Mensagem de erro quando a tarefa está em branco */
+.mensagem-erro {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: var(--destructive);
+  border: 1px solid var(--destructive);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.88rem;
+  margin-bottom: 1rem;
+}
+
+/* Barra com a contagem de tarefas */
+.resumo-tarefas {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+/* Lista que agrupa os itens de tarefa */
+.lista-tarefas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Cada item individual da lista de tarefas */
+.item-tarefa {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.item-tarefa:hover {
+  background-color: var(--accent);
+}
+
+/* Agrupa a caixinha de seleção (checkbox), o spinner e o texto da tarefa */
+.conteudo-tarefa {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  cursor: pointer;
+  word-break: break-word;
+}
+
+/* Caixa de marcação (checkbox) para avançar o status da tarefa */
+.checkbox-tarefa {
+  width: 1.15rem;
+  height: 1.15rem;
+  cursor: pointer;
+  accent-color: #22c55e;
+  border: 1px solid var(--input);
+  border-radius: calc(var(--radius) - 4px);
+  flex-shrink: 0;
+}
+
+/* Quando está EM ANDAMENTO, esconde o visual padrão do checkbox mantendo o clique ativo sobre o spinner */
+.item-tarefa.em-andamento .checkbox-tarefa {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0;
+  z-index: 2;
+}
+
+/* Ícone giratório (spinner de carregamento) exibido quando a tarefa está EM ANDAMENTO */
+.spinner-andamento {
+  width: 1.15rem;
+  height: 1.15rem;
+  border: 2.5px solid var(--border);
+  border-top-color: #f59e0b;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: girar-spinner 0.8s linear infinite;
+}
+
+/* Animação que faz o spinner girar sem parar */
+@keyframes girar-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Etiqueta visual "Em andamento" ao lado do texto */
+.badge-andamento {
+  font-size: 0.72rem;
+  font-weight: 600;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 0.12rem 0.5rem;
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+/* Texto da atividade */
+.texto-tarefa {
+  font-size: 0.95rem;
+  color: var(--card-foreground);
+  transition: color 0.2s ease;
+}
+
+/* Visual para a tarefa quando está EM ANDAMENTO (1º clique) */
+.item-tarefa.em-andamento {
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+/* Visual para a tarefa quando está CONCLUÍDA (2º clique: fundo verde escuro e borda verde) */
+.item-tarefa.concluida {
+  background-color: rgba(22, 163, 74, 0.16);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+/* Texto riscado e cor em --muted-foreground quando a tarefa está CONCLUÍDA */
+.item-tarefa.concluida .texto-tarefa {
+  text-decoration: line-through;
+  color: var(--muted-foreground);
+}
+
+/* Botão de remover (ícone de lixeira sem borda e com opacidade suave) */
+.botao-remover {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  color: var(--destructive);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  opacity: 0.55;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.botao-remover:hover {
+  background-color: transparent;
+  color: var(--destructive);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Mensagem exibida quando a lista está vazia */
+.mensagem-vazia {
+  text-align: center;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+  padding: 1.5rem 0.5rem;
+}
+
+/* Ajuste responsivo para telas pequenas (celulares) */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.25rem;
+  }
+
+  .form-tarefa {
+    flex-direction: column;
+  }
+
+  .botao-adicionar {
+    width: 100%;
+  }
+}

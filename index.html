@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- Garante que a página se adapte bem ao tamanho da tela de celulares e computadores -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Lista de Tarefas</title>
+  <!-- Conecta o arquivo de estilo visual (CSS) ao nosso HTML -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Caixa principal que centraliza o aplicativo na tela -->
+  <main class="container">
+    <header class="cabecalho">
+      <h1>Minha Lista de Tarefas</h1>
+      <p class="subtitulo">Organize suas atividades do dia a dia</p>
+    </header>
+
+    <!-- Formulário para digitar e adicionar uma nova tarefa -->
+    <form id="form-tarefa" class="form-tarefa" novalidate>
+      <input
+        type="text"
+        id="input-tarefa"
+        class="input-tarefa"
+        placeholder="O que você precisa fazer hoje?"
+        aria-label="Digite uma nova tarefa"
+        autocomplete="off"
+      >
+      <button type="submit" id="botao-adicionar" class="botao-adicionar">
+        Adicionar
+      </button>
+    </form>
+
+    <!-- Mensagem de aviso (aparece apenas quando o usuário tenta adicionar tarefa vazia) -->
+    <p id="mensagem-erro" class="mensagem-erro" role="alert" hidden></p>
+
+    <!-- Resumo com a contagem de tarefas -->
+    <div class="resumo-tarefas" id="resumo-tarefas">
+      <span id="contador-total">Total: 0</span>
+      <span id="contador-andamento">Em andamento: 0</span>
+      <span id="contador-concluidas">Concluídas: 0</span>
+    </div>
+
+    <!-- Lista onde as tarefas serão desenhadas pelo JavaScript -->
+    <ul id="lista-tarefas" class="lista-tarefas" aria-label="Lista de tarefas"></ul>
+
+    <!-- Mensagem exibida quando não há nenhuma tarefa cadastrada -->
+    <p id="mensagem-vazia" class="mensagem-vazia">
+      Nenhuma tarefa cadastrada ainda. Adicione uma atividade acima!
+    </p>
+  </main>
+
+  <!-- Conecta o arquivo de comportamento (JavaScript) ao final do HTML -->
+  <script src="script.js"></script>
+</body>
+</html>
