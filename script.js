@@ -170,6 +170,7 @@ const listaTarefasEl = document.getElementById("lista-tarefas");
 const mensagemVaziaEl = document.getElementById("mensagem-vazia");
 const mensagemErroEl = document.getElementById("mensagem-erro");
 const contadorTotalEl = document.getElementById("contador-total");
+const contadorPendentesEl = document.getElementById("contador-pendentes");
 const contadorAndamentoEl = document.getElementById("contador-andamento");
 const contadorConcluidasEl = document.getElementById("contador-concluidas");
 const botaoLimparConcluidasEl = document.getElementById("botao-limpar-concluidas");
@@ -194,6 +195,9 @@ function desenharTarefas() {
 
   // Atualiza os contadores em tempo real
   const total = tarefas.length;
+  const pendentes = tarefas.filter(function (t) {
+    return t.status === "pendente";
+  }).length;
   const emAndamento = tarefas.filter(function (t) {
     return t.status === "em_andamento";
   }).length;
@@ -202,6 +206,7 @@ function desenharTarefas() {
   }).length;
 
   contadorTotalEl.textContent = "Total: " + total;
+  contadorPendentesEl.textContent = "Pendentes: " + pendentes;
   contadorAndamentoEl.textContent = "Em andamento: " + emAndamento;
   contadorConcluidasEl.textContent = "Concluídas: " + concluidas;
 
