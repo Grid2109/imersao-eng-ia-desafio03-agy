@@ -2,9 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Lista de tarefas (To-Do List) intuitiva e responsiva desenvolvida com HTML, CSS e JavaScript puros, com fluxo de 3 estados e persistência local.">
   <!-- Garante que a página se adapte bem ao tamanho da tela de celulares e computadores -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Lista de Tarefas</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- Conecta o arquivo de estilo visual (CSS) ao nosso HTML -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -39,6 +41,19 @@
       <span id="contador-total">Total: 0</span>
       <span id="contador-andamento">Em andamento: 0</span>
       <span id="contador-concluidas">Concluídas: 0</span>
+    </div>
+
+    <!-- Barra de ações: filtros por status e botão de limpar concluídas -->
+    <div class="barra-acoes" id="barra-acoes">
+      <div class="filtros-tarefas" role="group" aria-label="Filtrar tarefas por estado">
+        <button type="button" class="botao-filtro ativo" data-filtro="todas">Todas</button>
+        <button type="button" class="botao-filtro" data-filtro="pendente">Pendentes</button>
+        <button type="button" class="botao-filtro" data-filtro="em_andamento">Em andamento</button>
+        <button type="button" class="botao-filtro" data-filtro="concluida">Concluídas</button>
+      </div>
+      <button type="button" id="botao-limpar-concluidas" class="botao-limpar-concluidas" title="Remover tarefas concluídas">
+        Limpar concluídas
+      </button>
     </div>
 
     <!-- Lista onde as tarefas serão desenhadas pelo JavaScript -->

@@ -98,6 +98,11 @@ body {
 .input-tarefa:focus-visible,
 .botao-adicionar:focus-visible,
 .botao-remover:focus-visible,
+.botao-editar:focus-visible,
+.botao-filtro:focus-visible,
+.botao-limpar-concluidas:focus-visible,
+.botao-salvar-edicao:focus-visible,
+.botao-cancelar-edicao:focus-visible,
 .checkbox-tarefa:focus-visible {
   outline: none;
   border-color: var(--ring);
@@ -287,12 +292,158 @@ body {
   transform: scale(1.08);
 }
 
+/* Agrupador de botões de ação de cada item (editar e remover) */
+.acoes-tarefa {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Botão de editar tarefa */
+.botao-editar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  color: var(--muted-foreground);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  opacity: 0.6;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+
+.botao-editar:hover {
+  color: var(--foreground);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Barra de controles: filtros por status e botão de limpar */
+.barra-acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Grupo de botões de filtro */
+.filtros-tarefas {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.botao-filtro {
+  background-color: transparent;
+  color: var(--muted-foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.botao-filtro:hover {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+
+.botao-filtro.ativo {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  border-color: var(--ring);
+  font-weight: 600;
+}
+
+/* Botão para limpar tarefas concluídas */
+.botao-limpar-concluidas {
+  background-color: transparent;
+  color: var(--muted-foreground);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.3rem 0.5rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.botao-limpar-concluidas:hover {
+  color: var(--destructive);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Formulário de edição inline da tarefa */
+.form-edicao {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.input-edicao {
+  flex: 1;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--ring);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.65rem;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.botao-salvar-edicao,
+.botao-cancelar-edicao {
+  background-color: var(--secondary);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.botao-salvar-edicao:hover {
+  background-color: var(--accent);
+  border-color: var(--ring);
+}
+
+.botao-cancelar-edicao:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--destructive);
+}
+
 /* Mensagem exibida quando a lista está vazia */
 .mensagem-vazia {
   text-align: center;
   color: var(--muted-foreground);
   font-size: 0.9rem;
   padding: 1.5rem 0.5rem;
+}
+
+/* Respeito à preferência do usuário de redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .spinner-andamento {
+    animation: none;
+  }
+
+  .botao-adicionar,
+  .botao-remover,
+  .botao-editar,
+  .item-tarefa {
+    transition: none;
+  }
 }
 
 /* Ajuste responsivo para telas pequenas (celulares) */
@@ -307,5 +458,18 @@ body {
 
   .botao-adicionar {
     width: 100%;
+  }
+
+  .barra-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtros-tarefas {
+    justify-content: space-between;
+  }
+
+  .botao-limpar-concluidas {
+    text-align: center;
   }
 }
