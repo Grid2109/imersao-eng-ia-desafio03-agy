@@ -33,6 +33,13 @@ Uma aplicação web de **Lista de Tarefas (To-Do List)** construída com **HTML,
 4. **No seu computador local**:
    - Abra o navegador e acesse `http://localhost:8080`.
 
+## Demonstração do projeto e Deploy
+<img width="721" height="622" alt="image" src="https://github.com/user-attachments/assets/a39d5376-6d54-4671-a666-d387b9d14aa7" />
+
+
+[Abrir a lista de tarefas](https://todo-list-ia-agy.netlify.app)
+
+
 ## Como cada arquivo funciona
 
 - **`index.html` (Estrutura)**: Define os elementos semânticos da página: cabeçalho, formulário de cadastro (`<form>`), campo de texto (`<input>`), botão de adicionar (`<button>`), barra de resumo com os 3 contadores (`Total`, `Em andamento` e `Concluídas`) e a lista (`<ul>`) onde as tarefas são renderizadas.
