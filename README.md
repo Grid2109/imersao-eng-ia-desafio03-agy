@@ -1,6 +1,6 @@
 # Minha Lista de Tarefas — Desafio 03 (Alura + Google for Startups)
 
-> **Sobre o projeto:** Este projeto foi desenvolvido durante o **Desafio 03 da Imersão de Engenharia de Software com IA da Alura + Google for Startups**. A aplicação foi construída do zero utilizando agentes autônomos do **Google Antigravity** em sua **Primeira Versão (v1)** e posteriormente evoluiu para uma **Segunda Versão Revisada (v2)**, na qual os agentes do Antigravity executaram melhorias profundas de arquitetura, acessibilidade, novas funcionalidades e documentação técnica guiadas pelo framework de engenharia de prompt **GCCD** (*Goal, Context, Constraints, Done When*).
+> **Sobre o projeto:** Este projeto foi desenvolvido por **Ingrid Lira** durante o **Desafio 03 da Imersão de Engenharia de Software com IA da Alura + Google for Startups**. A aplicação foi construída do zero utilizando agentes autônomos do **Google Antigravity** em sua **Primeira Versão (v1)** e posteriormente evoluiu para uma **Segunda Versão Revisada (v2)**, na qual os agentes do Antigravity executaram melhorias profundas de arquitetura, acessibilidade, novas funcionalidades e documentação técnica guiadas pelo framework de engenharia de prompt **GCCD** (*Goal, Context, Constraints, Done When*).
 
 ## O que é o projeto
 
@@ -51,89 +51,137 @@ O fluxo de uso foi desenhado para ser intuitivo e direto:
 
 ---
 
-## Como rodar o projeto
+## Como clonar o repositório
 
-Você pode executar o projeto no seu computador local, no Google Cloud Shell ou acessá-lo diretamente pelo navegador.
+Para baixar uma cópia do projeto para o seu computador, certifique-se de ter o **Git** instalado no seu sistema (você pode verificar digitando `git --version` no seu terminal).
 
-### Pré-requisitos e termos importantes
-
-- **Clonar**: Baixar uma cópia completa dos arquivos e histórico do projeto para o seu computador.
-- **Terminal**: Programa de computador onde interagimos com o sistema operacional por meio de comandos em texto.
-- **Servidor local**: Programa que roda no seu computador e disponibiliza os arquivos como se fosse um site na internet.
-- **Porta**: Número de identificação que direciona a conexão de rede para um programa específico no computador.
-- **PATH**: Lista de pastas do sistema operacional que indica onde procurar os programas instalados (como o Python) para executá-los via linha de comando.
-
----
-
-### Opção 1: Abrir diretamente no navegador (Sem instalar nada)
-
-1. Baixe ou clone o repositório no seu computador.
-2. Localize a pasta `imersao-eng-ia-desafio03-agy` no seu gerenciador de arquivos (Explorador de Arquivos do Windows ou Finder do macOS).
-3. Dê um duplo clique no arquivo `index.html` ou arraste-o para uma janela aberta do seu navegador (Chrome, Edge, Firefox).
-
----
-
-### Opção 2: Servidor local com Python (Recomendado)
-
-1. Abra o seu **terminal**.
-2. Faça a clonagem do repositório:
+1. Abra o seu **terminal** (Prompt de Comando ou PowerShell no Windows, ou Terminal no Linux e macOS).
+2. Execute o comando de clonagem:
    ```bash
    git clone https://github.com/Grid2109/imersao-eng-ia-desafio03-agy.git
    ```
-3. Acesse a pasta do projeto:
+3. Acesse a pasta do projeto clonado:
    ```bash
    cd imersao-eng-ia-desafio03-agy
    ```
-4. Inicie o servidor local na porta `8080`:
-   - No **Linux**, **macOS** ou **Google Cloud Shell**:
-     ```bash
-     python3 -m http.server 8080
-     ```
-   - No **Windows**:
-     ```powershell
-     python -m http.server 8080
-     ```
-     *(ou utilize `py -m http.server 8080` caso use o iniciador padrão do Python no Windows)*
-5. Abra o navegador e acesse:
+
+---
+
+## Como executar e instalar por Sistema Operacional
+
+Por ser uma aplicação web nativa construída com **HTML, CSS e JavaScript puros**, o projeto **não necessita de instalação de pacotes externos** (não é necessário executar `npm install` nem configurar compiladores). Todos os arquivos são interpretados diretamente pelo navegador.
+
+Abaixo estão as instruções detalhadas de execução para cada sistema operacional:
+
+### Pré-requisitos e termos importantes
+
+- **Terminal**: Programa de computador onde interagimos com o sistema operacional por meio de comandos em texto.
+- **Servidor local**: Programa que roda no seu computador e disponibiliza os arquivos como se fosse um site na internet, simulando o ambiente real de produção.
+- **Porta**: Número de identificação que direciona a conexão de rede para um programa específico no computador (exemplo: `8080`).
+- **PATH**: Lista de pastas do sistema operacional que indica onde procurar os programas instalados (como o Python ou Node.js) para executá-los via linha de comando.
+
+---
+
+### Windows
+
+Você pode rodar a aplicação no Windows de duas formas:
+
+#### Opção A: Abertura direta (Sem instalar nada)
+1. Abra o Explorador de Arquivos (`tecla Windows + E`).
+2. Acesse a pasta `imersao-eng-ia-desafio03-agy`.
+3. Dê um duplo clique no arquivo `index.html` (ou clique com o botão direito e selecione seu navegador preferido, como Chrome ou Edge).
+
+#### Opção B: Servidor local com Python (Recomendado)
+1. Abra o PowerShell ou o Prompt de Comando (CMD) dentro da pasta do projeto.
+2. Inicie o servidor local na porta `8080`:
+   ```powershell
+   python -m http.server 8080
+   ```
+   *(Caso o comando `python` não seja reconhecido, utilize `py -m http.server 8080`)*.
+3. Abra o navegador e acesse:
    ```text
    http://localhost:8080
    ```
+4. Para encerrar o servidor, volte ao terminal e pressione `Ctrl + C`.
 
 ---
 
-### Opção 3: No Google Cloud Shell
+### Linux (Ubuntu, Debian, Fedora e derivados)
 
-1. Abra o Google Cloud Shell e acesse o diretório do projeto:
-   ```bash
-   cd imersao-eng-ia-desafio03-agy
-   ```
-2. Inicie o servidor web com Python:
+#### Opção A: Abertura direta via terminal ou gerenciador de arquivos
+- Pelo terminal, dentro da pasta do projeto, execute:
+  ```bash
+  xdg-open index.html
+  ```
+- Ou abra o gerenciador de arquivos e dê um duplo clique no arquivo `index.html`.
+
+#### Opção B: Servidor local com Python
+1. A maioria das distribuições Linux já vem com o Python 3 pré-instalado. No terminal da pasta do projeto, execute:
    ```bash
    python3 -m http.server 8080
    ```
-3. Clique no botão **Web Preview** (ícone de uma tela com uma lupa no canto superior direito da janela do Cloud Shell).
-4. Selecione **Preview on port 8080** (ou selecione *Change port*, informe `8080` e confirme em *Change and Preview*).
+2. Caso o Python 3 não esteja instalado:
+   - No **Debian/Ubuntu**: `sudo apt update && sudo apt install python3`
+   - No **Fedora**: `sudo dnf install python3`
+3. Abra o navegador e acesse:
+   ```text
+   http://localhost:8080
+   ```
+4. Para encerrar o servidor, pressione `Ctrl + C`.
 
 ---
 
-### Opção 4: Versão publicada na Web
+### macOS
 
-O projeto está disponível online sem necessidade de configuração ou instalação:
+#### Opção A: Abertura direta via Finder ou terminal
+- Pelo terminal, dentro da pasta do projeto, execute:
+  ```bash
+  open index.html
+  ```
+- Ou localize o arquivo `index.html` no Finder e dê um duplo clique.
 
-- Link de acesso: [https://todo-list-ia-agy.netlify.app](https://todo-list-ia-agy.netlify.app)
+#### Opção B: Servidor local com Python
+1. No Terminal, dentro da pasta do projeto, execute:
+   ```bash
+   python3 -m http.server 8080
+   ```
+2. Caso precise instalar o Python, utilize o Homebrew (`brew install python`) ou baixe o instalador oficial em python.org.
+3. Abra o navegador e acesse:
+   ```text
+   http://localhost:8080
+   ```
+4. Para encerrar o servidor, pressione `Ctrl + C`.
+
+---
+
+### Ambientes Web e Cloud (Google Cloud Shell e Vercel)
+
+- **No Google Cloud Shell**:
+  1. No terminal do Cloud Shell, entre na pasta do projeto:
+     ```bash
+     cd imersao-eng-ia-desafio03-agy
+     ```
+  2. Inicie o servidor:
+     ```bash
+     python3 -m http.server 8080
+     ```
+  3. Clique no botão **Web Preview** (ícone de tela com lupa no canto superior direito) e selecione **Preview on port 8080**.
+- **Versão Online Publicada na Vercel**:
+  - Para acessar sem baixar nem executar nada: [https://imersao-eng-ia-desafio03-agy.vercel.app](https://imersao-eng-ia-desafio03-agy.vercel.app).
 
 ---
 
 ### Solução de problemas comuns
 
-- **Comando Python não reconhecido (`'python'` ou `'py'` não é reconhecido como comando interno)**:
-  - O Python não está instalado ou a opção de adicionar o Python ao **PATH** do sistema não foi marcada durante a instalação.
-  - Como resolver: Baixe o instalador oficial em python.org marcando a opção "Add Python to PATH", ou utilize a **Opção 1** (abrir diretamente o `index.html` no navegador).
+- **Comando Python não reconhecido no Windows (`'python'` ou `'py'` não é reconhecido)**:
+  - Causa: O Python não está instalado ou a caixa "Add Python to PATH" não foi marcada durante a instalação.
+  - Solução: Baixe o instalador oficial em python.org marcando a opção "Add Python to PATH", ou use a **Opção A** (abrir diretamente o arquivo `index.html`).
 - **Porta em uso (`OSError: [Errno 98] Address already in use` ou `[WinError 10048]`)**:
-  - Outro aplicativo já está utilizando a porta 8080 no seu computador.
-  - Como resolver: Altere a porta ao rodar o comando, por exemplo: `python -m http.server 8000` (e acesse `http://localhost:8000`).
-- **Erro de diretório inexistente ao executar `cd`**:
-  - Certifique-se de que o comando `git clone` foi executado antes e que você digitou o nome correto da pasta: `cd imersao-eng-ia-desafio03-agy`.
+  - Causa: Outro programa já está utilizando a porta 8080.
+  - Solução: Mude o número da porta no comando, por exemplo: `python -m http.server 8081` (ou `python3 -m http.server 8081`) e acesse `http://localhost:8081`.
+- **Erro ao entrar na pasta (`cd: no such file or directory` ou `O sistema não pode encontrar o caminho especificado`)**:
+  - Causa: O comando `git clone` ainda não foi executado ou você está no diretório pai errado.
+  - Solução: Execute `git clone https://github.com/Grid2109/imersao-eng-ia-desafio03-agy.git` e depois `cd imersao-eng-ia-desafio03-agy`.
 
 ---
 
@@ -254,7 +302,7 @@ Melhorar a aplicação de Lista de Tarefas e o seu arquivo README.md (Desafio 03
 - Projeto: To-Do List em HTML, CSS e JavaScript puros, sem frameworks, sem Node.js e sem gerenciador de pacotes (npm/yarn).
 - Persistência: Dados salvos localmente no localStorage do navegador.
 - Repositório: https://github.com/Grid2109/imersao-eng-ia-desafio03-agy
-- Versão publicada: https://todo-list-ia-agy.netlify.app
+- Versão publicada: https://imersao-eng-ia-desafio03-agy.vercel.app
 - Arquivos base: index.html, style.css, script.js e README.md.
 - Cenário: Portfólio de uma desenvolvedora em formação na Imersão de Engenharia de Software com IA. O texto deve ser acessível para quem lê o portfólio, mas tecnicamente rigoroso.
 
@@ -284,7 +332,7 @@ Etapa 2 — Implementação das Melhorias no Código:
 
 Etapa 3 — Edição do README.md:
 - Instruções completas de clonagem (git clone) e navegação com o nome correto da pasta (cd imersao-eng-ia-desafio03-agy).
-- 4 opções de execução: direto no navegador com dois cliques, servidor local Python (com variações de Windows/Linux/macOS), Google Cloud Shell e versão online na Netlify.
+- 4 opções de execução: direto no navegador com dois cliques, servidor local Python (com variações de Windows/Linux/macOS), Google Cloud Shell e versão online na Vercel.
 - Guia de solução dos problemas mais comuns (Python fora do PATH, porta em uso, pasta inexistente).
 - Seção "Como usar a lista de tarefas" detalhando o ciclo de vida dos 3 estados, edição, filtros e contadores.
 - Seção detalhando a evolução entre a versão inicial (v1) e a versão revisada (v2).
@@ -324,3 +372,13 @@ Para garantir conformidade entre a documentação e o código real, cada afirma�
 | Responsividade e centralização em telas pequenas | `style.css` (linhas 30-52) e media query para dispositivos móveis |
 | Comando de clonagem e nome correto da pasta do projeto | `README.md` com `git clone` e navegação para `imersao-eng-ia-desafio03-agy` |
 | Presença de LICENSE, .gitignore, favicon.svg e meta description | Arquivos `LICENSE`, `.gitignore`, `favicon.svg` na raiz e metadados no `index.html` |
+
+---
+
+## Créditos e Parceria
+
+- **Desenvolvedora**: Ingrid Lira ([GitHub @Grid2109](https://github.com/Grid2109))
+- **Programa**: Imersão de Engenharia de Software com IA (Desafio 03)
+- **Parceria Institucional**: [Alura](https://www.alura.com.br/) + [Google for Startups](https://startup.google.com/)
+- **Ambiente de Desenvolvimento**: Desenvolvido com suporte de agentes autônomos no **Google Antigravity**
+- **Licença**: [MIT License](LICENSE)
