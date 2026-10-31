@@ -18,7 +18,7 @@ O projeto exemplifica como ferramentas de IA generativa para desenvolvimento de 
 <img width="645" height="692" alt="image" src="https://github.com/user-attachments/assets/5edcea18-3edd-4a29-af2b-defd6e4acfdb" />
 
 
-[Abrir a lista de tarefas](https://todo-list-ia-agy.netlify.app](https://imersao-eng-ia-desafio03-agy.vercel.app))
+[Abrir a lista de tarefas](https://imersao-eng-ia-desafio03-agy.vercel.app)
 
 ---
 
