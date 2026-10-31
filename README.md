@@ -10,9 +10,15 @@ O projeto exemplifica como ferramentas de IA generativa para desenvolvimento de 
 
 ## Demonstração do projeto e Deploy
 
-<img width="721" height="622" alt="image" src="https://github.com/user-attachments/assets/a39d5376-6d54-4671-a666-d387b9d14aa7" />
+<img width="672" height="500" alt="image" src="https://github.com/user-attachments/assets/3395705a-c718-4b1c-8d2e-56c873588d0a" />
+<img width="614" height="567" alt="image" src="https://github.com/user-attachments/assets/025eeae9-4180-4e46-bf00-66e0c5f5e1d2" />
+<img width="675" height="614" alt="image" src="https://github.com/user-attachments/assets/2a036f3e-7973-41dc-846e-dbc4d934f460" />
+<img width="627" height="538" alt="image" src="https://github.com/user-attachments/assets/d2642a25-1147-4256-a7ed-dbe245f741bf" />
+<img width="654" height="601" alt="image" src="https://github.com/user-attachments/assets/b113babe-ea35-4436-96e0-e69f81341f4b" />
+<img width="645" height="692" alt="image" src="https://github.com/user-attachments/assets/5edcea18-3edd-4a29-af2b-defd6e4acfdb" />
 
-[Abrir a lista de tarefas](https://todo-list-ia-agy.netlify.app)
+
+[Abrir a lista de tarefas](https://todo-list-ia-agy.netlify.app](https://imersao-eng-ia-desafio03-agy.vercel.app))
 
 ---
 
